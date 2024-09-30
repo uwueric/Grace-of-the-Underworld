@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://mrggbdn6to6a"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_l31cl"]
+[ext_resource type="Texture2D" uid="uid://dqnf562qooy48" path="res://Clouds.png" id="2_7lr8j"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_l31cl")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 377.0
+offset_top = 83.0
+offset_right = 741.0
+offset_bottom = 274.0
+text = "Start!"
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 377.0
+offset_top = 319.0
+offset_right = 741.0
+offset_bottom = 510.0
+text = "Quit!"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 326)
+
+[node name="Background" type="Node2D" parent="."]
+z_index = -1
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(600, 269)
+
+[node name="Parallax2D" type="Parallax2D" parent="Background"]
+scroll_offset = Vector2(-176, -134)
+repeat_size = Vector2(1150, 0)
+autoscroll = Vector2(100, 0)
+repeat_times = 2
+ignore_camera_scroll = true
+
+[node name="Clouds" type="Sprite2D" parent="Background/Parallax2D"]
+position = Vector2(29.5, 166)
+scale = Vector2(0.931111, 1.21754)
+texture = ExtResource("2_7lr8j")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
