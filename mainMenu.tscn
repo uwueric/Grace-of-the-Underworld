@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://mrggbdn6to6a"]
+[gd_scene load_steps=10 format=3 uid="uid://mrggbdn6to6a"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_l31cl"]
 [ext_resource type="Texture2D" uid="uid://dqnf562qooy48" path="res://Clouds.png" id="2_7lr8j"]
+[ext_resource type="Texture2D" uid="uid://c57ndbc0uy4ga" path="res://Background1.png" id="3_avk0u"]
+[ext_resource type="Texture2D" uid="uid://ctn1l2oq4td44" path="res://Background2.png" id="4_6qhiq"]
+[ext_resource type="Texture2D" uid="uid://dwu7a0xvlaapw" path="res://Background3.png" id="5_otj0w"]
+[ext_resource type="Texture2D" uid="uid://d32a2eaw4jra2" path="res://Background4.png" id="6_q6pal"]
+[ext_resource type="Texture2D" uid="uid://3wlwyt0x0ntf" path="res://Background5.png" id="7_tw7br"]
+[ext_resource type="Texture2D" uid="uid://gudl3nu8io0f" path="res://Background6.png" id="8_r5sah"]
+[ext_resource type="Texture2D" uid="uid://cr8po73r60hjn" path="res://Background7.png" id="9_beenm"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_l31cl")
@@ -30,6 +37,7 @@ texture_repeat = 2
 position = Vector2(600, 269)
 
 [node name="Parallax2D" type="Parallax2D" parent="Background"]
+visible = false
 scroll_offset = Vector2(-176, -134)
 repeat_size = Vector2(1150, 0)
 autoscroll = Vector2(100, 0)
@@ -37,9 +45,72 @@ repeat_times = 2
 ignore_camera_scroll = true
 
 [node name="Clouds" type="Sprite2D" parent="Background/Parallax2D"]
+visible = false
 position = Vector2(29.5, 166)
 scale = Vector2(0.931111, 1.21754)
 texture = ExtResource("2_7lr8j")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Background"]
+repeat_times = 2
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2"]
+texture = ExtResource("3_avk0u")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Background"]
+repeat_size = Vector2(768, 0)
+autoscroll = Vector2(100, 0)
+repeat_times = 3
+ignore_camera_scroll = true
+screen_offset = Vector2(100, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D3"]
+texture = ExtResource("4_6qhiq")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Background"]
+repeat_size = Vector2(768, 0)
+autoscroll = Vector2(25, 0)
+repeat_times = 3
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D4"]
+texture = ExtResource("5_otj0w")
+
+[node name="Parallax2D5" type="Parallax2D" parent="Background"]
+repeat_size = Vector2(768, 0)
+repeat_times = 3
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D5"]
+position = Vector2(1, 0)
+texture = ExtResource("6_q6pal")
+
+[node name="Parallax2D6" type="Parallax2D" parent="Background"]
+repeat_size = Vector2(768, 0)
+autoscroll = Vector2(-65, 0)
+repeat_times = 3
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D6"]
+position = Vector2(-435, 0)
+scale = Vector2(1.16406, 1)
+texture = ExtResource("7_tw7br")
+
+[node name="Parallax2D7" type="Parallax2D" parent="Background"]
+repeat_size = Vector2(768, 0)
+autoscroll = Vector2(10, 0)
+repeat_times = 3
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D7"]
+position = Vector2(-881.5, 0)
+scale = Vector2(1.08464, 1)
+texture = ExtResource("8_r5sah")
+
+[node name="Parallax2D8" type="Parallax2D" parent="Background"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D8"]
+texture = ExtResource("9_beenm")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
